@@ -3,7 +3,8 @@ async function getTickets() {
   const response = await fetch('http://localhost:4000/tickets', {
     // By default Next caches our data. This means that even though we refresh the browser, the same data will show up even after it's been deleted
     // To get the latest reflection, we use revalidate option provided by Next. This way we can control on how frequent we want Next to look for a new update
-    // Setting revalidate to 0 tells Next that we don't want to cache the data and to keep looking for an update.
+    // Setting revalidate to 0 tells Next that we don't want to cache the data and to keep looking for an update
+    // This means we're moving away from the default Static Site Generator strategy that Nextjs uses
     // This will give us the latest data
     next: {
       revalidate: 0,
